@@ -44,6 +44,11 @@ instance Show Product where
 -- >>> let r = execState (produce p') w
 -- >>> evalState (amountOf "Furniture") r
 -- 1
+--
+-- >>> let w2 = Warehouse 200 $ M.empty
+-- >>> let r2 = execState (produce p') w2
+-- >>> evalState (amountOf "Furniture") r2
+-- 0
 instance Productable Product where
     need ip@(IndustryProduct{}) = _depends ip
     need _ = []
