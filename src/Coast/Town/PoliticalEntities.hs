@@ -5,6 +5,7 @@ import Coast.Utils.Percented
 import Coast.Wealth.Economy
 
 data PopulationLevel = Village | Outpost | Burg | Town | City | Metropolis
+                       deriving (Eq, Show, Bounded, Enum)
 
 data Kingdom = Kingdom { _kname :: String,
                          _cities :: [Settlement] }
@@ -15,6 +16,7 @@ data PoliticalRegime =
   | Autocracy 
   | Patriarcy 
   | Democracy
+   deriving (Eq, Show, Enum, Bounded)
 
 type Classes = [Quantifier SocialClass]
 data SocialClass
