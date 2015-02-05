@@ -18,7 +18,7 @@ data PoliticalRegime =
   | Democracy
    deriving (Eq, Show, Enum, Bounded)
 
-type Classes = [Quantifier SocialClass]
+type Classes = Quantifier SocialClass
 data SocialClass
     = Citizens -- Simple people, workers. Change cost of labour.
     | Merchants -- Trader, invester, industry captain. Change industry & trade.
@@ -26,8 +26,9 @@ data SocialClass
     | Supernatural -- Mages, demonic invocators... Provoke huge spikes.
     | Aristocrats -- Rulers. Increase wars and demands for luxury.
     | Thieves -- Mischievous felons. Increase smuggling, underground guilds...
+    deriving (Eq, Show, Enum, Bounded, Ord)
 
-data Allegiance = Indendant | Inside Kingdom
+data Allegiance = Independant | Inside Kingdom
 
 type Building = [Product]
 
